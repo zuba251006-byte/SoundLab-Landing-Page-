@@ -1,0 +1,345 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #161929;
+    --primary-color: #5d64e4;
+    --nav-text: #828282;
+}
+
+body.dark-mode {
+    --bg-color: #161929;
+    --text-color: #ffffff;
+    --primary-color: #7c83ff;
+    --nav-text: #cfcfcf;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+    max-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60rem;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.left {
+    max-width: 500px;
+}
+
+.logo {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.5s all;
+    /* height: 100px;
+    width: 190px; */
+    border-radius: 1rem;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    transition: 0.5s all;
+}
+
+ul {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    /* color: #828282; */
+    color: var(--nav-text);
+    text-transform: capitalize;
+    font-size: clamp(13px, 2vw, 16px);
+    transition: 0.1s all;
+    font-weight: 400;
+    border-bottom: solid 0px #5d64e4;
+}
+
+a:hover {
+    color: #5d64e4;
+    border-bottom: solid 3px #5d64e4;
+    transition: 0.1s all;
+}
+
+button.signIn {
+    padding: 1rem 2rem;
+    text-transform: capitalize;
+    background-color: #161929;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s all;
+    font-weight: 400;
+    font-size: clamp(13px, 2vw, 16px);
+}
+
+button.signIn:hover {
+    transform: scale(1.05);
+    transition: 0.5s all;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.mainContents {
+    display: flex;
+    align-items: center;
+   justify-content: flex-start;
+    width: 60rem;
+    height: 65vh;
+    padding: 0 4rem;
+}
+
+.headerContents {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.paragraph {
+    width: 28rem;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+    font-size: clamp(70px, 8vw, 90px);
+}
+
+h1.blue {
+    text-transform: initial;
+    /* color: #5d64e4; */
+    color: var(--primary-color);
+}
+
+p {
+    margin: 1rem 0 2rem 0;
+    font-size: clamp(15px, 2vw, 20px);
+}
+
+img.headphones { 
+    width: clamp(20rem, 50vw, 45rem);
+    height: auto;
+    position: absolute; 
+    top: 0;
+    right: 0; 
+    z-index: 0; 
+}
+
+button.start-here {
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    /* background-color: #5d64e4; */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.25s all;
+    font-size: clamp(15px, 2vw, 20px);
+}
+
+button.start-here:hover {
+    transition: 0.25s all;
+    transform: scale(1.05);
+}
+
+button.free-samples {
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    background-color: white;
+    color: #161929;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: 0.25s all;
+    font-size: clamp(15px, 2vw, 20px);
+}
+
+button.free-samples:hover {
+    transition: 0.25s all;
+    transform: scale(1.05);
+}
+
+.burgerMenuContainer {
+    display: none;        
+}
+
+@media  screen and (max-width: 1000px) {
+    
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burgerMenuContainer {
+        display: inherit;
+        content: "";
+        width: 30px;
+        height: 20px;
+        margin: 0 0 0 1rem;
+        position: relative;
+    }
+
+.burgerTrigger {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.burgerMenu::after {
+    content: "";
+    width: 30px;
+    height: 5px;
+    background-color: #161929;
+    position: absolute;
+    transition: 0.25s all;
+}
+   
+.burgerMenu::before {
+    content: "";
+    width: 30px;
+    height: 5px;
+    background-color: #161929;
+    position: absolute;
+    transform: translateY(15px);
+    transition: 0.25s all;
+
+}
+
+ul {
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    visibility: hidden;
+    background-color: white;
+    padding: 1rem 0;
+    transition: 0.25s all;
+}
+
+li {
+    padding: 0 1rem;
+}
+
+.burgerMenu.active {
+    transform: translateY(7.5px);
+    transition: 0.25s all;
+}
+
+.burgerMenu.active::after {
+    transform: rotate(225deg) translateY(0) translateX(0);
+    transition: 0.25s all;
+}
+
+.burgerMenu.active::before {
+    transform: rotate(-225deg) translateY(0) translateX(0);
+    transition: 0.25s all;
+}
+
+ul.active {
+    visibility: visible;
+    opacity: 100%;
+    transition: 0.25s all;
+}
+
+button.signIn.active {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s all;
+}
+
+}
+
+@media  screen and (max-width: 700px) {
+    .mainContents {
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    img.headphones { 
+         position: initial;
+         width: 100%;
+         height: auto;
+    }
+
+    nav{
+        padding: 2rem 0;
+    }
+
+    h1{
+        font-size: 55px;
+    }
+
+    .paragraph{
+        width: auto;
+    }
+
+    .buttons{
+        display: flex;
+    }
+
+    button.free-samples{
+        padding: 1rem 2rem;
+    }
+
+     button.start-here{
+        padding: 1rem 2rem;
+    }
+
+}
+
+/* ===== THEME TOGGLE BUTTON ===== */
+#themeToggle {
+    margin-right: 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
